@@ -7,12 +7,9 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, Alert, View, Image, TouchableOpacity, TouchableWithoutFeedback} from 'react-native';
-import {Theme, Colors} from "./theme/Theme";
+import {StyleSheet, Text, Alert, View, Image, TouchableOpacity, TouchableWithoutFeedback} from 'react-native';
+import {Colors} from "./theme/Theme";
 import OptionButton from "./components/OptionButton";
-import rock from './assets/images/rock.png';
-import paper from './assets/images/paper.png';
-import scissors from './assets/images/scissors.png';
 import {GameHelper, OPTIONS, RESULT} from "./helpers/GameHelper";
 import Score from "./components/Score";
 
@@ -26,9 +23,9 @@ export default class App extends Component<Props> {
     //------------------------------------------------------------ RENDERERS
 
     render() {
+        const computerScore = 0;
+        const playerScore = 0;
         return (
-            const computerScore=0;
-            const playerScore=0;
             <TouchableWithoutFeedback style={styles.container}>
                 <View style={{flex: 1}}>
                     <View style={styles.section}>
@@ -49,7 +46,8 @@ export default class App extends Component<Props> {
 
 
     renderOption = (o, index) => {
-        return  <OptionButton option={o} key={'option'+index} style={{backgroundColor: Colors.computerColor}}></OptionButton>
+        return <OptionButton option={o} key={'option' + index}
+                             style={{backgroundColor: Colors.playerColor}}></OptionButton>
 
     }
 
